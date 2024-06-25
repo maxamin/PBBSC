@@ -136,7 +136,7 @@ Ensure all services are running as expected by checking the respective URLs and 
 
 - [Analysis and trends of Android Phoenix malware](https://cryptax.medium.com/android-phoenix-authors-claims-sample-identification-and-trends-f199cbc9901d)
 
-#Stay tuned for upcoming blog articles focusing on further insights into this malware.
+**Stay tuned for upcoming blog articles focusing on further insights into this malware.
 
 [Binance_ID:271854090]
 
