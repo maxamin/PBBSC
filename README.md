@@ -136,11 +136,12 @@ Ensure all services are running as expected by checking the respective URLs and 
 
 - [Analysis and trends of Android Phoenix malware](https://cryptax.medium.com/android-phoenix-authors-claims-sample-identification-and-trends-f199cbc9901d)
 
-**Stay tuned for upcoming blog articles focusing on further insights into this malware.
+# Stay tuned for upcoming blog articles focusing on further insights into this malware.
 
-[Binance_ID:271854090]
+# Donation:
+# [Binance_ID:271854090]
 
-[Pray for peace to 🇵🇸]
+# [Pray for peace to 🇵🇸]
 
 ![PS Image](https://www.humeurs.be/wp-content/uploads/2023/10/PAN20231016_Crabes-1200-web-1024x838.jpg)
 ![PSS Image](./images.jpg)
