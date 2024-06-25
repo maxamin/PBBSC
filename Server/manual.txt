@@ -1,0 +1,80 @@
+1.#Command; apt update && apt install dos2unix -y && dos2unix install.sh && chmod 777 install.sh && bash install.sh
+
+2.#Install Frontend
+
+#install nodejs
+bash node.sh 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install v19.9.0
+nvm use v19.9.0
+
+
+#Change License
+/var/data/www/src/settings.js
+
+change LicenseEnd: new Date('2030-09-26'), to LicenseEnd: new Date('2500-09-26'),
+
+#-
+
+#build-frontend
+cd /var/data/www
+npm install && npm run build
+Check; npm start
+
+
+#Start Deamon Server#
+
+3.#Start Deamon
+
+Panel;
+cd /var/data/www
+screen npm start
+
+VNC Deamon;
+
+cd /root
+screen ./vnc
+
+#-#
+
+
+
+4.#Settings Panel
+
+panel; ..urlpanel..:5000/login?secret=..loginds..
+trafficpanel; ..trafficpanel../index.php
+
+
+Gate ..urlpanel..:4000
+VNC ..urlpanel..:9000
+
+
+API key GATE; ..apicryptkey..
+
+
+add admin;
+cd /root && ./addadmin.sh
+
+#Mysql
+SQL DATA;
+
+ServerIP; yourip
+
+User; phoniex
+
+password; ..passsql..
+
+db; bot
+
+#start
+
+service mysql restart
+service nginx restart
+service php8.1-fpm restart
+cd /root/ && screen ./vnc
+cd /var/data/www && screen npm start
+
+
+
+

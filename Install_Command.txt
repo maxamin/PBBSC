@@ -1,0 +1,55 @@
+Step 1: Prepare the Server
+Update and Install Utilities:
+
+bash
+Copy code
+apt update && apt install dos2unix -y
+Prepare Installation Script:
+
+bash
+Copy code
+dos2unix install.sh && chmod 777 install.sh && bash install.sh
+Enter the VPS IP when prompted: yourvpsip
+Enter the Root Password when prompted: root
+Step 2: Install Frontend Components
+Install Node.js:
+
+bash
+Copy code
+bash node.sh 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install v19.9.0
+nvm use v19.9.0
+Build Frontend Application:
+
+bash
+Copy code
+cd /var/data/www
+npm install && npm run build
+npm start # Check if the application starts correctly
+Step 3: Start Daemon Services
+Panel Service:
+
+bash
+Copy code
+cd /var/data/www
+screen npm start
+VNC Daemon:
+
+bash
+Copy code
+cd /root
+screen ./vnc
+Step 4: Configure Settings Panel
+Access the Panel:
+
+plaintext
+Copy code
+Check the .env file at /var/data/www for 'loginsecret' and access the panel at http://yourip:5000/login?secret=loginsecret
+Retrieve Application Key:
+
+plaintext
+Copy code
+Find the 'key' defined in /var/www/html/conf.php (e.g., define('key', 'sample');). Use this ('sample') for further application setup.
