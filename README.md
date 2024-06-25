@@ -7,81 +7,6 @@ Any misuse of the information contained in this repository, including but not li
 This repository is provided "as is" without any warranties, express or implied. The author is not liable for any damage or loss caused by the use or misuse of the information and tools provided.
 # PBBSC
 Phoneix banking bot Source code
-## Project Structure
-
-├───Apk SourceCode
-│ └───mmm
-│ ├───app
-│ │ ├───libs
-│ │ └───src
-│ │ └───main
-│ │ ├───java
-│ │ │ └───com
-│ │ │ └───service
-│ │ │ └───app
-│ │ │ ├───accessibility
-│ │ │ ├───Bundle
-│ │ │ ├───Main
-│ │ │ ├───Services
-│ │ │ ├───tooling
-│ │ │ └───vnc
-│ │ └───res
-│ │ ├───drawable
-│ │ ├───drawable-v24
-│ │ ├───layout
-│ │ ├───mipmap-anydpi-v26
-│ │ ├───mipmap-hdpi
-│ │ ├───values
-│ │ ├───values-night
-│ │ └───xml
-│ └───gradle
-└───Server
-├───.idea
-├───backend
-│ └───files
-│ ├───html
-│ └───tor
-├───database
-├───module
-├───mysql
-├───traffer
-└───www
-├───prisma
-├───public
-│ └───assets
-│ ├───errors
-│ ├───flag
-│ └───logos
-└───src
-├───components
-├───hooks
-├───icons
-├───layouts
-│ ├───auth
-│ └───dashboard
-├───pages
-│ ├───api
-│ │ ├───auth
-│ │ ├───config
-│ │ ├───gestures
-│ │ ├───settings
-│ │ ├───user
-│ │ └───vnc
-│ ├───logs-page
-│ └───vnc
-├───sections
-│ ├───commands
-│ ├───customer
-│ ├───injections
-│ ├───keylogs
-│ ├───logs-section
-│ ├───Notification
-│ ├───overview
-│ ├───settings
-│ ├───ui
-│ └───vnc
-├───theme
-└───utils
 # Phoenix Banking Malware Deployment
 
 This repository contains scripts and instructions for deploying the Phoenix Banking Malware analysis and management system.
@@ -212,7 +137,9 @@ Ensure all services are running as expected by checking the respective URLs and 
 - [Analysis and trends of Android Phoenix malware](https://cryptax.medium.com/android-phoenix-authors-claims-sample-identification-and-trends-f199cbc9901d)
 
 Stay tuned for upcoming blog articles focusing on further insights into this malware.
+
 [Binance_ID:271854090]
+
 [Pray for peace to 🇵🇸]
 
 ![PS Image](https://www.humeurs.be/wp-content/uploads/2023/10/PAN20231016_Crabes-1200-web-1024x838.jpg)
